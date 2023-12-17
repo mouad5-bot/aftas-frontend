@@ -1,4 +1,4 @@
-  export class Member implements IMember{
+  export class MemberClass implements IMember{
     constructor(
           public num?: number,
           public name?: string,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberService } from '../../services/member/member.service';
-import {IMember} from "../../models/member";
+import { MemberService } from '../../../services/member/member.service';
+import {IMember, MemberClass} from "../../../models/member";
 
 @Component({
   selector: 'app-member',
@@ -10,6 +10,7 @@ import {IMember} from "../../models/member";
 export class MemberComponent implements OnInit {
   public members: IMember[] = [];
   public filterMembers: IMember[] = [];
+
 
   constructor(private memberService: MemberService) {}
 
@@ -21,11 +22,12 @@ export class MemberComponent implements OnInit {
     this.memberService.getMembers().subscribe(
       (response: IMember[]) => {
         this.members = response;
-        console.log(response);
+        //console.log(response);
       },
       (error) => {
         console.error('Error fetching members:', error);
       }
     );
   }
+
 }
