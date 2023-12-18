@@ -6,8 +6,8 @@
           public accessDate?: Date,
           public nationality?: string,
           public identityDocumentType?: string,
-          public identityNumber?: string) {
-    }
+          public identityNumber?: string
+    ) { }
   }
   export interface IMember{
     num?: number,

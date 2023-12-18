@@ -1,10 +1,7 @@
-import { Component,NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import {MemberClass} from "../../../models/member";
 import {MemberService} from "../../../services/member/member.service";
-import {CommonModule} from "@angular/common";
-import {FormBuilder, NgForm} from '@angular/forms';
-import {Observable} from "rxjs";
-import {Route, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -19,7 +16,6 @@ export class MemberAddComponent {
   public addMember = new MemberClass();
 
   constructor(private memberService: MemberService,
-              private fb: FormBuilder,
               private router: Router) {}
   onSubmit() {
 
@@ -27,14 +23,14 @@ export class MemberAddComponent {
 
     this.addMember.identityDocumentType = this.selectedDocumentType ;
       this.memberService.addMember(this.addMember).subscribe(
-        (member) => {
-        console.log("Member added by success !", member);
-        this.router.navigate(['/member/list']);
-      },
+          (member) => {
+          console.log("Member added by success !", member);
+          this.router.navigate(['/member/list']);
+        },
         (error) => {
           alert("error occured")
         }
-        )
+      )
 
   }
 

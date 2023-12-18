@@ -1,27 +1,22 @@
-export class Competition {
-  code?: string;
-  date!: Date;
-  startTime!: string;
-  endTime!: string;
-  numberOfParticipants!: number;
-  location!: string;
-  amountOfFish!: number;
-
+export class CompetitionClass implements ICompetition{
   constructor(
-    code?: string,
-    date?: Date,
-    startTime?: string,
-    endTime?: string,
-    numberOfParticipants?: number,
-    location?: string,
-    amountOfFish?: number
-  ) {
-    this.code = code;
-    this.date = date || new Date();
-    this.startTime = startTime || '';
-    this.endTime = endTime || '';
-    this.numberOfParticipants = numberOfParticipants || 0;
-    this.location = location || '';
-    this.amountOfFish = amountOfFish || 0;
-  }
+       public code?: string,
+       public date?: Date,
+       public startTime?: string,
+       public endTime?: string,
+       public numberOfParticipants?: number,
+       public location?: string,
+       public amountOfFish?: number
+  ) { }
+}
+
+export interface ICompetition{
+  code?: string,
+  date?: Date,
+  startTime?: string,
+  endTime?: string,
+  numberOfParticipants?: number,
+  location?: string,
+  amountOfFish?: number
+
 }

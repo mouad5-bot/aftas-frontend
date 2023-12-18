@@ -4,7 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MemberComponent } from './components/member/member-list/member.component';
 import { CompetitionComponent } from './components/competition/competition-list/competition.component';
@@ -16,6 +16,7 @@ import { FishAddComponent } from './components/fish/fish-add/fish-add.component'
 import { HuntingAddComponent } from './components/hunting/hunting-add/hunting-add.component';
 import { MemberAddComponent } from './components/member/member-add/member-add.component';
 import {CommonModule} from "@angular/common";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {CommonModule} from "@angular/common";
     CommonModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
