@@ -39,9 +39,14 @@
           <td> {{ member.name }} </td>
           <td> {{ member.familyName }} </td>
           <td> {{ member.identityNumber }} </td>
+          <td></td>
+          <td></td>
         </tr>
         </tbody>
+
       </table>
+      <mat-paginator [length]="filterdMembers.length" >
+      </mat-paginator>
     </div>
   </div>
 </div>

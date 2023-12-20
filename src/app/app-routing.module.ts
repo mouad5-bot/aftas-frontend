@@ -7,6 +7,10 @@ import {CompetitionComponent} from "./components/competition/competition-list/co
 import {HuntingComponent} from "./components/hunting/hunting-list/hunting.component";
 import {FishComponent} from "./components/fish/fish-list/fish.component";
 import {MemberAddComponent} from "./components/member/member-add/member-add.component";
+import {HuntingAddComponent} from "./components/hunting/hunting-add/hunting-add.component";
+import {FishAddComponent} from "./components/fish/fish-add/fish-add.component";
+import {RankingListComponent} from "./components/ranking/ranking-list/ranking-list.component";
+import {RankingAddComponent} from "./components/ranking/ranking-add/ranking-add.component";
 
 const routes: Routes = [
   {
@@ -19,9 +23,14 @@ const routes: Routes = [
       { path: 'competition/list', component: CompetitionComponent},
       { path: "competition/add", component: CompetitionAddComponent},
 
+      { path: 'ranking/list', component: RankingListComponent},
+      { path: "ranking/add", component: RankingAddComponent},
+
       { path: 'hunting/list', component: HuntingComponent },
+      { path: 'hunting/add', component: HuntingAddComponent },
 
       { path: 'fish/list', component: FishComponent },
+      { path: 'fish/add', component: FishAddComponent },
     ]
   }
 ];

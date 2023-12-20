@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {ApiResponseModel} from "../../core/api-response.model";
 import {IMember, MemberClass} from "../../models/member";

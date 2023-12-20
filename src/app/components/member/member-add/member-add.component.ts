@@ -19,9 +19,8 @@ export class MemberAddComponent {
               private router: Router) {}
   onSubmit() {
 
-    console.log(this.addMember);
+    this.addMember.identityDocumentType = this.selectedDocumentType;
 
-    this.addMember.identityDocumentType = this.selectedDocumentType ;
       this.memberService.addMember(this.addMember).subscribe(
           (member) => {
           console.log("Member added by success !", member);
