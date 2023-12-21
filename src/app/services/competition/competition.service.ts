@@ -15,7 +15,7 @@ export class CompetitionService {
   constructor( private  http: HttpClient) { }
 
   public getCompetitions(): Observable<ICompetition[]> {
-    return this.http.get<ApiResponseModel<ICompetition[]>>(this.api + "getAll")
+    return this.http.get<ApiResponseModel<ICompetition[]>>(this.api + "all")
                     .pipe(
                       map(res => res.data)
                     );

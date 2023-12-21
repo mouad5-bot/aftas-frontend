@@ -20,11 +20,10 @@ export class CompetitionAddComponent {
 
     this.competitionService.addCompetition(this.addCompetition).subscribe(
       (competition) => {
-        console.log("Competition added by success !", competition);
         this.router.navigate(['/competition/list']);
       },
       (error) => {
-        alert("error occured")
+        alert("error occurred")
       }
     )
 
