@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../../../services/member/member.service';
 import {IMember} from "../../../models/member";
+import {PageEvent} from "@angular/material/paginator";
+
 
 @Component({
   selector: 'app-member',
   templateUrl: './member.component.html',
   styleUrls: ['./member.component.css']
+
 })
 export class MemberComponent implements OnInit {
   public members: IMember[] = [];
   public filterdMembers: IMember[] = [];
   private _listFilter: string = '';
+
+  currentPage: number = 0;
+  pageSize:number = 2;
 
   constructor(private memberService: MemberService) {}
 
@@ -30,7 +36,7 @@ export class MemberComponent implements OnInit {
   }
 
   public getMembers(): void {
-    this.memberService.getMembers().subscribe(
+    this.memberService.getPaginatedMembers(this.currentPage, this.pageSize).subscribe(
       ( response: IMember[] ) => {
         this.members = response;
         this.filterdMembers = response;
@@ -39,6 +45,11 @@ export class MemberComponent implements OnInit {
         console.error('Error fetching members:', error);
       }
     );
+  }
+  onPageChange(event: PageEvent): void {
+    this.currentPage = event.pageIndex !== undefined ? event.pageIndex : 0;
+    this.pageSize = event.pageSize !== undefined ? event.pageSize : 2;
+    this.getMembers();
   }
 
   private performFilter(filterBy: string): IMember[] {

@@ -15,7 +15,7 @@ export class HuntingAddComponent {
 
   public addHunt = new HuntingClass();
 
-  public memberList  = this.memberService.getMembers();
+  public memberList  = this.memberService.getMembers( );
   public selectedMember: number | undefined;
 
   public competitionList = this.competitionService.getCompetitions();

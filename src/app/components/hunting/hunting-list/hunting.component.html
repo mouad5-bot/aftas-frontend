@@ -17,18 +17,16 @@
         <tr>
           <th>Member</th>
           <th>Competition</th>
-          <th>Fish</th>
-          <th>Weight</th>
+          <th>Number Of Fish</th>
           <th></th>
           <th></th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let hunt of huntList">
-          <td> {{ hunt.memberNum }} </td>
+          <td> {{ hunt.memberName }} </td>
           <td> {{ hunt.competitionCode }} </td>
-          <td> {{ hunt.fishId }} </td>
-          <td> {{ hunt.fishWeight }} </td>
+          <td> {{ hunt.numberOfFish }} </td>
           <td></td>
           <td></td>
         </tr>
